@@ -2,7 +2,7 @@ import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBulMro8vX8NxCcacYM2MwpE_id07O7SMY",
+  apiKey: process.env.GOOGLE_API_KEY,
   authDomain: "natanova-56f03.firebaseapp.com",
   projectId: "natanova-56f03",
   storageBucket: "natanova-56f03.appspot.com",

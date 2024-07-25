@@ -4,14 +4,13 @@
   
   html {
     font-family: "Inter", sans-serif;
-    cursor: url(resources/nova-star.svg), auto;
   }
   body {
     margin: 0;
   }  
 
 
-.fullscreen {
+.fullscreen .fullscreen__baloons {
     position: fixed;
     top: 0;
     left: 0;
@@ -19,23 +18,35 @@
     right: 0;
     overflow: auto;
     background: #1B1C1F;
+    cursor: url(resources/nova-star.svg), auto;
   }
 
 .title {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    width: 100%;
-    height: 100%;
+  position: fixed;
+  justify-content: center;
+  width: 100%;
+}
+
+.title__content {
+  height: 100%;
+  width: 100%;
+  display:flex;
+  align-items: top;
+  justify-content:space-between;
+  gap: 8px;
+  padding: 32px;
+}
+
+.module {
+  overflow: visible;
+  position: relative;
 }
 
 h1 {
-  font-weight: 500;
+  font-weight: 400;
   color:aliceblue;
   margin: 0%;
-  font-size: 20px;
+  font-size: 32px;
 }
 
 h2 {

@@ -14,7 +14,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    bottom: 0;
+    height: 100vh;
     right: 0;
     overflow: auto;
     background: #1B1C1F;
@@ -46,24 +46,29 @@ h1 {
   font-weight: 400;
   color:aliceblue;
   margin: 0%;
-  font-size: 32px;
+  font-size: 24px;
 }
 
 h2 {
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 400;
   color:aliceblue;
   margin: 0%;
-  margin: 0;
 }
 
-p{
-    font-size: 14px;
-    font-weight: 400;
-    letter-spacing: .04rem;
-    color:aliceblue;
-    opacity: 70%;
-    margin: 0;
+p {
+  font-size: 14px;
+  font-weight: 400;
+  color:aliceblue;
+  margin: 0%;
+}
+
+a {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: .04rem;
+  color:#7F86BB;
+  margin: 0;
 }
 
 footer {
@@ -76,10 +81,15 @@ footer {
   display: flex;
   align-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 32px;
   padding: 32px;
 }
 
-h1 .footer {
-  color: white;
+a {
+  position: relative;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #E4FA16; 
 }

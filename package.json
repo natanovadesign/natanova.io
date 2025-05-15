@@ -1,5 +1,12 @@
 {
+  "name": "natanova",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "deploy": "firebase deploy"
+  },
   "dependencies": {
-    "firebase": "^11.7.3"
+    "firebase": "^10.11.0"
   }
 }
+

@@ -57,7 +57,6 @@ a:hover {
 }
 
 .hero__title {
-  cursor: url(/resources/nova-star.svg) 16 16, auto;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -77,7 +76,6 @@ a:hover {
 
   
 .hero__planets {
-  pointer-events: auto; 
   position: absolute;
   display: flex;
   width: 100%;
@@ -94,7 +92,6 @@ a:hover {
 .info {
   display: flex;
   z-index: 30;
-  pointer-events: auto; 
   width: 100%;
   flex-direction: column;
   align-items: flex-start;
@@ -107,6 +104,7 @@ a:hover {
   width: 100%;
   justify-content: space-between;
   align-items: center;
+  padding: 32px;
 }
 
 
@@ -114,8 +112,7 @@ a:hover {
   display: flex;
   align-content: center;
   align-items: center;
-  gap: 64px;
-  padding: 32px;
+  gap: 56px;
 }
 
 
@@ -123,7 +120,6 @@ a:hover {
   width: 50%;
   display: flex;
   font-size: 12px;
-  padding: 32px;
   opacity: 70%;
 }
 
@@ -146,6 +142,10 @@ p, .info__content--about {
 /* Mobile tweaks */
 @media (max-width: 768px) {
 
+  body {
+    margin: 0;
+  }  
+
   h1 {
     font-size: 20px;
   }
@@ -159,12 +159,28 @@ p, .info__content--about {
   }
 
   .hero {
-  height: 560px;
+  height: 100vh;
   }
 
   .info__content {
-  gap: 32px;
-}
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    gap: 32px;
+  }
+
+  .info__content--contact {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+  }
+
+  .info__content--about {
+    width: 100%;
+    gap: 0px;
+  }
 
   .projects {
     height: 400px;

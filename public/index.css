@@ -6,6 +6,7 @@
     font-family: "Source Code Pro", monospace;
   }
   body {
+    padding-top: env(safe-area-inset-top);
     margin: 0;
   }  
 
@@ -46,6 +47,7 @@ a:hover {
 
 
 .hero {
+  padding-top: env(safe-area-inset-top);
   z-index: 0;
   display: flex;
   flex-direction: column;

@@ -204,7 +204,6 @@ a:hover {
   left: 0;
   width: 100%;
   z-index: 30;
-  background: rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(50px);
 }
 
@@ -318,12 +317,6 @@ a:hover {
     gap: 32px;
   }
 
-  .info__content--contact {
-    width: 100%;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 32px;
-  }
 
   .info__content--about {
     width: 100%;

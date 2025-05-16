@@ -18,7 +18,7 @@ h1 {
 }
 
 h2 {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 400;
   color:aliceblue;
   margin: 0%;
@@ -63,7 +63,6 @@ a:hover {
   flex-direction: column;
   height: 100%;
   width: 100%;
-  /* background-color: #E4FA16; */
 }
 
 .hero__title--content {
@@ -73,6 +72,10 @@ a:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.logo img {
+  width: 120px;
 }
 
   
@@ -125,20 +128,63 @@ a:hover {
   opacity: 70%;
 }
 
-p, .info__content--about {
+.info__content--about p {
   font-size: 12px;
   line-height: 150%;
-  font-weight: 300;
 }
 
 
 .projects {
   height: 560px;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
   background-color: #7F86BB;
 }
 
+.projects__content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
 
+.projects__content__star {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  gap: 24px;
+}
+
+.star-img {
+  width: 32px;
+  height: 32px;
+  display: block;
+  margin: auto;
+}
+
+.star-img:hover {
+  animation: rotate 1s linear infinite;
+  transform-origin: center;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.projects__content p{
+  color: black;
+}
 
 
 /* Mobile tweaks */

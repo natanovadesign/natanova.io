@@ -58,7 +58,6 @@ a:hover {
 }
 
 .hero__title {
-  cursor: url(/public/resources/nova-star.png) auto;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -78,6 +77,7 @@ a:hover {
 
   
 .hero__planets {
+  cursor: url(/resources/nova-star.png) 16 16, auto;
   position: absolute;
   display: flex;
   width: 100%;

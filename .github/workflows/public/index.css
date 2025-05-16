@@ -3,7 +3,7 @@
   }
   
   html {
-    font-family: "Inter", sans-serif;
+    font-family: "Source Code Pro", monospace;
   }
   body {
     margin: 0;
@@ -36,25 +36,12 @@ a {
   letter-spacing: .04rem;
   color:#7F86BB;
   margin: 0;
+  position: relative;
+  text-decoration: none;
 }
 
-
-.header {
-  position: fixed;
-  z-index: 1000;
-  justify-content: center;
-  width: 100%;
-  
-}
-
-.header__content {
-  height: 100%;
-  width: 100%;
-  display:flex;
-  align-items: top;
-  justify-content:space-between;
-  gap: 8px;
-  padding: 32px;
+a:hover {
+  color: #E4FA16; 
 }
 
 
@@ -66,13 +53,47 @@ a {
   align-items: center;
   align-self: stretch;
   height: 100vh;
-  pointer-events: none;
   background-color:#1C1E26;
 }
 
+.hero__title {
+  cursor: url(/resources/nova-star.svg) 16 16, auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  /* background-color: #E4FA16; */
+}
+
+.hero__title--content {
+  display: flex;   
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+  
+.hero__planets {
+  pointer-events: auto; 
+  position: absolute;
+  display: flex;
+  width: 100%;
+  height:100%;
+  z-index: 20;
+}
+
+.module {
+  overflow: visible;
+  position: relative;
+}
+
+
 .info {
   display: flex;
-  z-index: 10;
+  z-index: 30;
   pointer-events: auto; 
   width: 100%;
   flex-direction: column;
@@ -81,22 +102,37 @@ a {
   backdrop-filter: blur(50px);
 }
 
-.hero__planets {
-  pointer-events: auto; 
-  position: absolute;
+.info__content {
   display: flex;
   width: 100%;
-  height:100%;
-  z-index: 0;
-  cursor: url(/resources/nova-star.svg), auto;
+  justify-content: space-between;
+  align-items: center;
 }
 
 
-
-.module {
-  overflow: visible;
-  position: relative;
+.info__content--contact {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  gap: 64px;
+  padding: 32px;
 }
+
+
+.info__content--about {
+  width: 50%;
+  display: flex;
+  font-size: 12px;
+  padding: 32px;
+  opacity: 70%;
+}
+
+p, .info__content--about {
+  font-size: 12px;
+  line-height: 150%;
+  font-weight: 300;
+}
+
 
 .projects {
   height: 560px;
@@ -105,22 +141,6 @@ a {
 }
 
 
-.info__content {
-  display: flex;
-  align-content: center;
-  align-items: center;
-  gap: 64px;
-  padding: 32px;
-}
-
-a {
-  position: relative;
-  text-decoration: none;
-}
-
-a:hover {
-  color: #E4FA16; 
-}
 
 
 /* Mobile tweaks */
@@ -134,13 +154,19 @@ a:hover {
     font-size: 14px;
   }
 
-  p,
-  a {
+  p,a {
     font-size: 12px;
   }
 
+  .hero {
+  height: 560px;
+  }
+
+  .info__content {
+  gap: 32px;
+}
 
   .projects {
-    height: 100vh;
+    height: 400px;
   }
 }

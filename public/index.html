@@ -17,42 +17,83 @@
 <body>
 
 
-   
-  <div class="hero">
+
+
+<div class="hero-container">
+
+  <div class="hero-mode-switch">
+    <div class="hero-mode-switch__inner">
+      <button id="nn-btn">NN</button>
+      <button id="sleep-btn">Sleep</button>
+      <button id="design-btn">Design</button>
+      <button id="repeat-btn">Repeat</button>
+    </div>
+  </div>
+
+
+  <div class="hero hero--nn active" id="hero-nn">
+
     <div class="hero__title">
       <div class="hero__title--content">
         <div class="logo">
-          <img src="resources/natanova-logo.svg" alt="Logo" width="168" height="28">
+          <img src="resources/natanova-logo.svg" alt="Logo">
         </div>
-      </div> 
-    </div>
-
-    <div class="info">
-      <div class="info__content">
-        <div class="info__content--about">
-          <p>Hey! I'm a Product Designer with 10+ years of experience in UX/UI and Brand Design. I'm passionate about experimenting with generative tools. This is my playground and space for new ideas.</p>
-        </div>
-        <div class="info__content--contact">
-          <div>
-            <p>See my work</p>
-            <a href="https://dribbble.com/natanova">dribbble</a>
-          </div>
-          <div>
-            <p>Say hello</p>
-            <a href="mailto:natanova.design@gmail.com">natanova.design@gmail.com</a>
-          </div>
-        </div>
-        
       </div>
     </div>
-    
-    <div class="hero__planets">
 
-      <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.94/build/spline-viewer.js"></script>
+    <div class="hero__planets">
+      <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.96/build/spline-viewer.js"></script>
       <spline-viewer url="https://prod.spline.design/ZF6ARzqVdUiG1rMU/scene.splinecode"></spline-viewer>
-      
-    </div> 
+    </div>
+
+  <div class="hero__background"></div>
+
   </div>
+
+  <div class="hero hero--sleep" id="hero-sleep">
+    <h1>sleep</h1>
+  </div>
+
+  <div class="hero hero--design" id="hero-design">
+    <h1>design</h1>
+  </div>
+
+  <div class="hero hero--repeat" id="hero-repeat">
+    <h1>repeat</h1>
+  </div>
+
+
+  <div class="info">
+    <div class="info__content">
+      <div class="info__content--about">
+        <p>Hey! I'm a Product Designer with 10+ years of experience in UX/UI and Brand Design. I'm passionate about experimenting with generative tools. This is my playground and space for new ideas.</p>
+      </div>
+      <div class="info__content--contact">
+        <div>
+          <p>See my work</p>
+          <a href="https://dribbble.com/natanova">dribbble</a>
+        </div>
+        <div>
+          <p>Say hello</p>
+          <a href="mailto:natanova.design@gmail.com">natanova.design@gmail.com</a>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+
+</div>
+
+ 
+    
+
+
+
+
+
+
+
 
 
   <div class="projects">
@@ -66,6 +107,13 @@
     </div>
     
   </div>
+
+
+
+
+<script src="script.js"></script>
+
+
 
 </body>
 

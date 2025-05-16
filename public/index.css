@@ -110,6 +110,7 @@ a:hover {
   justify-content: space-between;
   align-items: center;
   padding: 32px;
+  gap: 32px;
 }
 
 
@@ -118,6 +119,7 @@ a:hover {
   align-content: center;
   align-items: center;
   gap: 56px;
+  min-width: 380px;
 }
 
 
@@ -204,10 +206,6 @@ a:hover {
 
   p,a {
     font-size: 12px;
-  }
-
-  .hero {
-  height: 640px;
   }
 
   .info__content {

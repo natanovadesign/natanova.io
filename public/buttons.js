@@ -1,3 +1,6 @@
+
+
+
 document.addEventListener("DOMContentLoaded", () => {
   const modes = ["nn", "sleep", "design", "repeat"];
 
@@ -24,3 +27,5 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("design-btn").addEventListener("click", () => showMode("design"));
   document.getElementById("repeat-btn").addEventListener("click", () => showMode("repeat"));
 });
+
+

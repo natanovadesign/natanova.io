@@ -97,7 +97,6 @@ a:hover {
 }
 
 .hero--sleep h1 {
-  margin-top: 240px;
   color: #0E1116;
 }
 
@@ -312,7 +311,7 @@ a:hover {
 
 .string {
   position: absolute;
-  top: 35%;
+  top: 20%;
   left: calc(50% + 50px);
   transform: translateX(0%);
   width: 2px;

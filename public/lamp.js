@@ -9,6 +9,8 @@ let pullDistance = 0;
 let defaultLength = 120;
 let maxStretch = 100;
 let toggleThreshold = 60;
+let movedDuringTouch = false;
+let touchStartTime = 0;
 
 function toggleLamp() {
   isLampOn = !isLampOn;
@@ -42,8 +44,10 @@ function animateReleaseAndToggle() {
 }
 
 function handleMouseDown(e) {
+  e.preventDefault();
   isDragging = true;
   dragStartY = e.clientY;
+  movedDuringTouch = false;
 
   document.addEventListener("mousemove", handleMouseMove);
   document.addEventListener("mouseup", handleMouseUp);
@@ -53,11 +57,13 @@ function handleMouseMove(e) {
   if (!isDragging) return;
 
   const dragY = e.clientY - dragStartY;
+  if (Math.abs(dragY) > 5) movedDuringTouch = true; // mark if moved more than 5px
+
   pullDistance = Math.min(Math.max(dragY, 0), maxStretch);
   updateString(defaultLength + pullDistance);
 }
 
-function handleMouseUp() {
+function handleMouseUp(e) {
   if (!isDragging) return;
   isDragging = false;
 
@@ -67,7 +73,44 @@ function handleMouseUp() {
   document.removeEventListener("mouseup", handleMouseUp);
 }
 
-knob.addEventListener("mousedown", handleMouseDown);
+function handleTouchStart(e) {
+  e.preventDefault();
+  if (e.touches.length === 1) {
+    isDragging = true;
+    dragStartY = e.touches[0].clientY;
+    movedDuringTouch = false;
+    touchStartTime = Date.now();
+  }
+}
 
-// Initialize with lamp ON
+function handleTouchMove(e) {
+  if (!isDragging) return;
+  const dragY = e.touches[0].clientY - dragStartY;
+  if (Math.abs(dragY) > 5) movedDuringTouch = true;
+
+  pullDistance = Math.min(Math.max(dragY, 0), maxStretch);
+  updateString(defaultLength + pullDistance);
+}
+
+function handleTouchEnd(e) {
+  if (!isDragging) return;
+  isDragging = false;
+
+  const touchDuration = Date.now() - touchStartTime;
+
+  if (!movedDuringTouch && touchDuration < 300) {
+    // It's a tap — toggle lamp immediately
+    toggleLamp();
+    updateString(defaultLength);
+  } else {
+    // It's a drag release
+    animateReleaseAndToggle();
+  }
+}
+
+knob.addEventListener("mousedown", handleMouseDown);
+knob.addEventListener("touchstart", handleTouchStart, { passive: false });
+knob.addEventListener("touchmove", handleTouchMove, { passive: false });
+knob.addEventListener("touchend", handleTouchEnd);
+
 light.style.display = "block";

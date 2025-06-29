@@ -1,10 +1,9 @@
-
-
-
 document.addEventListener("DOMContentLoaded", () => {
   const modes = ["nn", "sleep", "design", "repeat"];
+  const info = document.querySelector(".info");
 
   const showMode = (mode) => {
+    // Switch hero views
     modes.forEach(m => {
       const el = document.getElementById(`hero-${m}`);
       if (el) {
@@ -16,16 +15,23 @@ document.addEventListener("DOMContentLoaded", () => {
     if (target) {
       target.classList.add("active");
     }
+
+    // Toggle .dark-text on .info for sleep and design
+    if (mode === "sleep" || mode === "design") {
+      info.classList.add("dark-text");
+    } else {
+      info.classList.remove("dark-text");
+    }
   };
 
   // Default mode is 'nn'
   showMode("nn");
 
   // Button handlers
-  document.getElementById("nn-btn").addEventListener("click", () => showMode("nn"));
-  document.getElementById("sleep-btn").addEventListener("click", () => showMode("sleep"));
-  document.getElementById("design-btn").addEventListener("click", () => showMode("design"));
-  document.getElementById("repeat-btn").addEventListener("click", () => showMode("repeat"));
+  modes.forEach(mode => {
+    const btn = document.getElementById(`${mode}-btn`);
+    if (btn) {
+      btn.addEventListener("click", () => showMode(mode));
+    }
+  });
 });
-
-
